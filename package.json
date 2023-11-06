@@ -1,0 +1,14 @@
+{
+  "name": "zortusdiscordbot",
+  "version": "1.0.0",
+  "description": "Discord bot voor Zortus Roleplay",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "LuvvSum",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.13.0"
+  }
+}
