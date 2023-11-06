@@ -1,14 +1,15 @@
-const { Events } = require('discord.js');
+const { Events, PermissionsBitField, ChannelType } = require('discord.js');
+const config = require('../config.json');
 
 module.exports = {
     name: Events.VoiceStateUpdate,
-    async execute(interaction) {
-        if (newState.channel?.id == supportCreateChannelId) {
+    async execute(oldState, newState) {
+        if (newState.channel?.id == config.supportCreateChannelId) {
             const supportChannel = newState.guild.channels.create({
                 name: `Support (${newState.member.user.displayName})`,
                 type: ChannelType.GuildVoice,
                 parent: newState.channel.parent,
-                topic: supportCreateChannelId,
+                topic: config.supportCreateChannelId,
                 permissionOverwrites: [{
                     id: newState.member.id,
                     allow: [PermissionsBitField.Flags.ManageChannels]
@@ -22,7 +23,7 @@ module.exports = {
             })
         }
     
-        if (oldState.channel?.id != supportCreateChannelId && !oldState.channel?.members.size) {
+        if (oldState.channel?.id != config.supportCreateChannelId && !oldState.channel?.members.size) {
             oldState.channel?.delete();
         }
     }
