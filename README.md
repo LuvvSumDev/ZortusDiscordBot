@@ -1,2 +1,2 @@
-# ZortusDiscordBot
-💖Discord bot voor Zortus Roleplay
+# Zortus Discord Bot
+Discord bot voor Zortus Roleplay 💖
