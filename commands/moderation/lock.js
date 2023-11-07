@@ -18,7 +18,7 @@ module.exports = {
         });
 
         const embed = new EmbedBuilder()
-            .setAuthor({ name: 'Zortus Roleplay', iconURL: 'https://cdn.discordapp.com/attachments/1169103447606431834/1169103713529516093/zortus.png?ex=65542fae&is=6541baae&hm=3e9525adf794493afa093e40feabe8b43f0f95372d0d9f93f1f13fc3b16829d2&' })
+            .setAuthor({ name: 'Zortus Roleplay - Moderatie', iconURL: 'https://cdn.discordapp.com/attachments/1169103447606431834/1169103713529516093/zortus.png?ex=65542fae&is=6541baae&hm=3e9525adf794493afa093e40feabe8b43f0f95372d0d9f93f1f13fc3b16829d2&' })
             .setColor(0xFFFFFF)
             .setDescription(`Kanaal <#${channel.id}> is gesloten voor leden van de Discord server.`)
 
