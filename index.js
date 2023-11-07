@@ -1,8 +1,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
-const { Client, Collection, GatewayIntentBits, Events, ChannelType, PermissionFlagsBits, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, Embed } = require('discord.js');
+const { Client, Collection, GatewayIntentBits } = require('discord.js');
 const config = require('./config.json');
-const { createTranscript } = require('discord-html-transcripts');
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
