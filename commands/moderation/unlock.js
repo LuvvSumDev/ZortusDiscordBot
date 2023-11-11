@@ -11,6 +11,8 @@ module.exports = {
     ),
 
     async execute(interaction) {
+        if(!interaction.member.permissions.has('MANAGE_CHANNELS')) return interaction.reply({ text: 'Je hebt niet de juiste permissies om deze actie uit te voeren.', ephemeral: true })
+
         const channel = interaction.options.getChannel('kanaal');
 
         channel.permissionOverwrites.edit(interaction.guild.roles.everyone, {

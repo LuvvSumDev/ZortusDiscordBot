@@ -8,5 +8,6 @@
     "supportCreateChannelId": "",
     "suggestionChannel": "",
     "bugChannel": "",
-    "bugOutcomeChannel": ""
+    "bugOutcomeChannel": "",
+    "welcomeRole": ""
 }

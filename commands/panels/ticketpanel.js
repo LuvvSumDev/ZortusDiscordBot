@@ -42,11 +42,7 @@ module.exports = {
             .setAuthor({ name: 'Zortus Roleplay - Tickets', iconURL: 'https://cdn.discordapp.com/attachments/1169103447606431834/1169103713529516093/zortus.png?ex=65542fae&is=6541baae&hm=3e9525adf794493afa093e40feabe8b43f0f95372d0d9f93f1f13fc3b16829d2&' })
             .setDescription('Beste spelers van **Zortus Roleplay**! Je bent op de juiste plek gekomen om een vraag te stellen aan ons team! \n\n Klik op de knop onder dit bericht om een ticket te openen! Kies de beste categorie die bij jouw vraag past, staat deze categorie er niet bij kunnen we deze wellicht later toevoegen.\n\nKies voor nu voor de meest passende categorie!')
 
-        const message = await sendChannel.send({
-            embeds: [ticketEmbed],
-            components: [row]
-        });
-
+        await sendChannel.send({ embeds: [ticketEmbed], components: [row] });
         await interaction.reply({ content: 'Je hebt het ticket paneel verstuurd!', ephemeral: true });
 	},
 };
