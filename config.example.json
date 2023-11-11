@@ -6,5 +6,7 @@
     "ticketCategory": "",
     "ticketLogChannel": "",
     "supportCreateChannelId": "",
-    "suggestionChannel": ""
+    "suggestionChannel": "",
+    "bugChannel": "",
+    "bugOutcomeChannel": ""
 }
