@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+const { SlashCommandBuilder, PermissionsBitField, EmbedBuilder } = require('discord.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -16,11 +16,11 @@ module.exports = {
     ),
 
     async execute(interaction){
-        if(!interaction.member.permissions.has('KICK_MEMBERS')) return interaction.reply({ text: 'Je hebt niet de juiste permissies om deze actie uit te voeren.', ephemeral: true })
+        if(!interaction.member.permissions.has(PermissionsBitField.Flags.KickMembers)) return interaction.reply({ content: 'Je hebt niet de juiste permissies om deze actie uit te voeren.', ephemeral: true })
 
-        const gebruiker = interaction.options.getUser('gebruiker');
-        const reden = interaction.options.getString('reden');
-        const lid = interaction.guild.members.cache.get(gebruiker.id);
+        const kickUser = interaction.options.getUser('gebruiker');
+        const kickMember = interaction.guild.members.cache.get(kickUser.id);
+        const reason = interaction.options.getString('reden') || 'Geen reden opgegeven.';
 
         const DMEmbed = new EmbedBuilder()
             .setAuthor({ name: 'Zortus Roleplay - Moderatie', iconURL: 'https://cdn.discordapp.com/attachments/1169103447606431834/1169103713529516093/zortus.png?ex=65542fae&is=6541baae&hm=3e9525adf794493afa093e40feabe8b43f0f95372d0d9f93f1f13fc3b16829d2&' })
@@ -34,13 +34,16 @@ module.exports = {
                 },
                 {
                     name: "Opgegeven reden:",
-                    value: `${reden}`,
+                    value: `${reason}`,
                     inline: false
                 }
             )
 
-        await lid.send({ embeds: [DMEmbed] }).catch(err => {});
-        await interaction.guild.members.kick(gebruiker);
+        await kickMember.send({ embeds: [DMEmbed] }).catch(err => {
+            return;
+        });
+
+        await interaction.guild.members.kick(kickUser);
 
         const embed = new EmbedBuilder()
             .setAuthor({ name: 'Zortus Roleplay - Moderatie', iconURL: 'https://cdn.discordapp.com/attachments/1169103447606431834/1169103713529516093/zortus.png?ex=65542fae&is=6541baae&hm=3e9525adf794493afa093e40feabe8b43f0f95372d0d9f93f1f13fc3b16829d2&' })
@@ -49,7 +52,7 @@ module.exports = {
             .setFields(
                 {
                     name: "Gebruiker:",
-                    value: `<@${gebruiker.id}>`,
+                    value: `<@${kickUser.id}>`,
                     inline: false
                 },
                 {
@@ -59,7 +62,7 @@ module.exports = {
                 },
                 {
                     name: "Opgegeven reden:",
-                    value: `${reden}`,
+                    value: `${reason}`,
                     inline: false
                 }
             )

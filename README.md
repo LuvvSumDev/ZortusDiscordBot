@@ -5,7 +5,7 @@ Discord bot for Dutch FiveM server "Zortus Roleplay" 💖
 - Moderation
     - [x] Banning
     - [x] Kicking
-    - [ ] Timing out
+    - [x] Timing out
     - [x] Bulk deleting messages
     - [x] Locking and unlocking channels
 - Other
