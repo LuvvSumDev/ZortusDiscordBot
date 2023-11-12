@@ -13,6 +13,7 @@ Discord bot for Dutch FiveM server "Zortus Roleplay" 💖
     - [x] Suggestion system
     - [x] Bug report system
     - [x] Support join to create system
+    - [x] Uptime command
  
 ## License
 Distributed under the MIT License. See [LICENSE](https://github.com/LuvvSumDev/ZortusDiscordBot/blob/main/LICENSE) for more information.
