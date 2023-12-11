@@ -64,7 +64,7 @@ module.exports = {
                             .setStyle(ButtonStyle.Secondary),
                     )
     
-                await client.channels.cache.get(ticket.id).send({ content: `${interaction.user} & ${support}`, embeds: [openedTicketEmbed], components: [openedTicketButtons] });
+                await interaction.guild.channels.cache.get(ticket.id).send({ content: `${interaction.user} & ${support}`, embeds: [openedTicketEmbed], components: [openedTicketButtons] });
             } else if (interaction.values[0] === 'ticket_refund') {
                 await interaction.reply({ content: `Ticket wordt aangemaakt...`, ephemeral: true });
     
@@ -107,7 +107,7 @@ module.exports = {
                             .setStyle(ButtonStyle.Secondary),
                     )
     
-                await client.channels.cache.get(ticket.id).send({ content: `${interaction.user} & ${support}`, embeds: [openedTicketEmbed], components: [openedTicketButtons] });
+                await interaction.guild.channels.cache.get(ticket.id).send({ content: `${interaction.user} & ${support}`, embeds: [openedTicketEmbed], components: [openedTicketButtons] });
             } else if (interaction.values[0] === 'ticket_klacht') {
                 await interaction.reply({ content: `Ticket wordt aangemaakt...`, ephemeral: true });
     
@@ -150,7 +150,7 @@ module.exports = {
                             .setStyle(ButtonStyle.Secondary),
                     )
     
-                await client.channels.cache.get(ticket.id).send({ content: `${interaction.user} & ${support}`, embeds: [openedTicketEmbed], components: [openedTicketButtons] });
+                await interaction.guild.channels.cache.get(ticket.id).send({ content: `${interaction.user} & ${support}`, embeds: [openedTicketEmbed], components: [openedTicketButtons] });
             } else if (interaction.values[0] === 'ticket_unban') {
                 await interaction.reply({ content: `Ticket wordt aangemaakt...`, ephemeral: true });
     
@@ -193,7 +193,7 @@ module.exports = {
                             .setStyle(ButtonStyle.Secondary),
                     )
     
-                await client.channels.cache.get(ticket.id).send({ content: `${interaction.user} & ${support}`, embeds: [openedTicketEmbed], components: [openedTicketButtons] });
+                await interaction.guild.channels.cache.get(ticket.id).send({ content: `${interaction.user} & ${support}`, embeds: [openedTicketEmbed], components: [openedTicketButtons] });
             } else if (interaction.values[0] === 'ticket_donation') {
                 await interaction.reply({ content: `Ticket wordt aangemaakt...`, ephemeral: true });
     
@@ -236,7 +236,7 @@ module.exports = {
                             .setStyle(ButtonStyle.Secondary),
                     )
     
-                await client.channels.cache.get(ticket.id).send({ content: `${interaction.user} & ${support}`, embeds: [openedTicketEmbed], components: [openedTicketButtons] });
+                await interaction.guild.channels.cache.get(ticket.id).send({ content: `${interaction.user} & ${support}`, embeds: [openedTicketEmbed], components: [openedTicketButtons] });
             }
         } else if (interaction.isButton()) {
             if (interaction.customId === 'ticket_sluiten') {

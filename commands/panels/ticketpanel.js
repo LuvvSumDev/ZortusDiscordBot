@@ -1,4 +1,4 @@
-const { ActionRowBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder, SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+const { ActionRowBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder, SlashCommandBuilder, EmbedBuilder, PermissionsBitField } = require('discord.js');
 const config = require('../../config.json');
 
 module.exports = {
@@ -6,6 +6,8 @@ module.exports = {
 		.setName('ticketpanel')
 		.setDescription('Maak het ticket paneel aan.'),
 	async execute(interaction) {
+		if(!interaction.member.permissions.has(PermissionsBitField.Flags.Administrator)) return interaction.reply({ content: 'Je hebt niet de juiste permissies om deze actie uit te voeren.', ephemeral: true })
+
         const sendChannel = interaction.guild.channels.cache.get(config.ticketChannel)
 
         const select = new StringSelectMenuBuilder()
