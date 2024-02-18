@@ -1,19 +1,5 @@
 ## About This Project
-Discord bot for Dutch FiveM server "Zortus Roleplay" 💖
-
-## Road Map
-- Moderation
-    - [x] Banning and unbanning
-    - [x] Kicking
-    - [x] Timing out
-    - [x] Bulk deleting messages
-    - [x] Locking and unlocking channels
-- Other
-    - [x] Ticket system
-    - [x] Suggestion system
-    - [x] Bug report system
-    - [x] Support join to create system
-    - [x] Uptime command
+I made this Discord bot for a Dutch FiveM server called "Zortus Roleplay", some functions work, some don't. I'd recommend testing it in a testing Discord server before putting it into your main Discord server, have fun using some functions and experimenting.
  
 ## License
 Distributed under the MIT License. See [LICENSE](https://github.com/LuvvSumDev/ZortusDiscordBot/blob/main/LICENSE) for more information.
