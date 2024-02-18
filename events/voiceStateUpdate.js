@@ -1,4 +1,6 @@
-const { Events, PermissionsBitField, ChannelType } = require('discord.js');
+// This doens't work, it for some reason deletes random channels. Good luck fixing it if you would like to use this function! :)
+
+/* const { Events, PermissionsBitField, ChannelType } = require('discord.js');
 const config = require('../config.json');
 
 module.exports = {
@@ -27,4 +29,4 @@ module.exports = {
             oldState.channel?.delete();
         }
     }
-}
+} */
